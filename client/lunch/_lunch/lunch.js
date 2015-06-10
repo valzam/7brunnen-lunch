@@ -3,7 +3,7 @@ Template.lunch_panel.helpers({
     var weekdays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
     var date = this.date;
 
-    return weekdays[date.getDay()] + ", " + date.getDay() + "." + date.getMonth();
+    return weekdays[date.getDay()] + ", " + date.getDate() + "." + (date.getMonth() + 1);
   },
 
   numberAttending:function(){
