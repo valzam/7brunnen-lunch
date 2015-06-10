@@ -1,10 +1,13 @@
-Template.create_lunch.rendered=function() {
+Template.create_lunch.onRendered(function() {
     $('#date').datepicker({
       autoclose:true,
       startDate: '+0d',
-      orientation: 'top'
+      orientation: 'top',
+      format: 'dd.mm.yyyy'
     });
-};
+
+    $('#date').datepicker('setUTCDates', new Date());
+});
 
 Template.create_lunch.events({
   'click #create_lunch':function(event,template){

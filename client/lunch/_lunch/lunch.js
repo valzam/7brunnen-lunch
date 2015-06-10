@@ -17,6 +17,10 @@ Template.lunch_panel.helpers({
     });
 
     return result;
+  },
+
+  isCreator:function(){
+    return this.creator === Meteor.userId();
   }
 
 });
@@ -40,5 +44,10 @@ Template.lunch_panel.events({
         console.log("error", error);
       }
     });
+  },
+
+  'click #updateEvent':function(event,template){
+
+    Session.set("updateEvent",this._id);
   }
 });
