@@ -1,0 +1,12 @@
+.lunch-panel {
+  margin-bottom:1vh;
+}
+
+.img-circle{
+  margin-top:5px;
+}
+
+#cancelAttending{
+  cursor:pointer;
+  font-size:0.5em;
+}

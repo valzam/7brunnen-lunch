@@ -1,0 +1,60 @@
+<template name="lunch_panel">
+
+  <div class="row lunch-panel">
+
+    <div class="panel panel-default">
+      <div class="panel-body">
+          <div class="col-md-6 col-sm-6 col-xs-6">
+            <h3>{{prettyDate}}
+              {{#if isAttending}}
+                <span class="label label-success attending-label">You are going!</span>
+              {{/if}}
+            </h3>
+            <h5>{{time}}</h5>
+            <ul class="list-unstyled">
+              <li>Starter: {{starter}}</li>
+              <li>Main: {{main}}</li>
+              <li>Dessert: {{dessert}}</li>
+            </ul>
+
+            <ul class="list-unstyled">
+              <li>Price: {{price}}</li>
+            </ul>
+          </div>
+
+          <div class="col-md-6 col-sm-6 col-xs-6">
+
+              <h3>{{numberAttending}} attending
+                  {{#if isAttending}}
+                  <span class="text-danger" id='cancelAttending'>I can't come</span>
+                  {{/if}}
+              </h3>
+
+
+            <br>
+            {{#each attending}}
+              <img src="{{picture}}" alt="{{name}}" class="img-circle" height="50" width="50"/>
+            {{/each}}
+
+
+          </div>
+
+      </div>
+
+      {{#unless isAttending}}
+
+      <div class="panel-footer">
+        {{#if currentUser}}
+          <button id="attend" class="btn btn-success btn-lg btn-block" type="button">I will be there!</button>
+        {{else}}
+          <button class="btn btn-lg btn-block btn-success" disabled="disabled" type="button">Please log in to attend</button>
+        {{/if}}
+      </div>
+
+      {{/unless}}
+
+    </div>
+
+  </div>
+
+</template>
