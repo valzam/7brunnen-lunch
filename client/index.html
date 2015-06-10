@@ -28,7 +28,9 @@
 
     <ul class="nav navbar-nav">
       <li class="active" id="upcoming"><a href="#">Upcoming Lunches</a></li>
-      <li id="create" data-toggle="modal" data-target="#createLunch"><a href="#">Create Lunch Event</a></li>
+			{{#if currentUser}}
+      	<li id="create" data-toggle="modal" data-target="#createLunch"><a href="#">Create Lunch Event</a></li>
+			{{/if}}
     </ul>
 
 		<ul class="nav navbar-nav navbar-right">
