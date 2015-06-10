@@ -1,5 +1,10 @@
 <template name="lunches">
-  {{#each lunch}}
-    {{> lunch_panel}}
-  {{/each}}
+  {{#if hasLunches}}
+    {{#each lunch}}
+      {{> lunch_panel}}
+    {{/each}}
+  {{else}}
+  <h2>No upcoming lunches</h2>
+  {{/if}}
+
 </template>
