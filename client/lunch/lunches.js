@@ -1,14 +1,14 @@
 Template.lunches.onCreated(function(){
-  this.subscribe("lunches");
+  this.subscribe("upcommingLunches");
 });
 
 
 Template.lunches.helpers({
   lunch:function(){
-    return Event.find({type:"lunch",date:{$gte:new Date()}},{sort:{date:1}});
+    return Event.find({},{sort:{date:1}});
   },
 
   hasLunches:function(){
-    return Event.find({type:"lunch",date:{$gte:new Date()}}).count() > 0;
+    return Event.find({}).count() > 0;
   }
 });

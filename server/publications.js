@@ -1,3 +1,3 @@
-Meteor.publish("lunches", function(){
-  return Event.find({type:"lunch"});
+Meteor.publish("upcommingLunches", function(){
+  return Event.find({type:"lunch",date:{$gte:new Date()}});
 });

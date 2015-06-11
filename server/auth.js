@@ -5,7 +5,7 @@ Accounts.onCreateUser(function(options, user) {
         } else if (user.services.twitter){
           options.profile.picture= user.services.twitter.profile_image_url;
         } else {
-          options.profile.picture = '/default-pic';
+          options.profile.picture = '/default-pic.png';
         }
         user.profile = options.profile;
     }

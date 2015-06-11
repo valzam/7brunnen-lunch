@@ -53,7 +53,17 @@ Template.update_lunch.events({
         $('#updateLunch').modal('hide');
         Session.set("updateEvent",null);
       });
+  },
 
+  'click #delete_event':function(event,tempalte){
+    event.preventDefault();
 
+    Meteor.call("deleteEvent", Session.get("updateEvent"), function(error, result){
+      if(error){
+        console.log("error", error);
+      }
+        $('#updateLunch').modal('hide');
+        Session.set("updateEvent",null);
+    });
   }
 });
