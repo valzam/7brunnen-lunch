@@ -41,6 +41,14 @@ Template.lunch_panel.helpers({
     } else {
       return false;
     }
+  },
+
+  creatorWidth:function(){
+    if (this.creator === Meteor.userId()) {
+      return "col-md-4 col-sm-4 col-xs-6";
+    } else {
+      return "col-md-6 col-sm-6 col-xs-12";
+    }
   }
 
 

@@ -4,7 +4,7 @@
 
     <div class="panel panel-default">
       <div class="panel-body">
-          <div class="col-md-6 col-sm-6 col-xs-6">
+          <div class="col-md-6 col-sm-6 col-xs-12">
             <h3>{{prettyDate}}
               {{#if isAttending}}
                 <span class="label label-success attending-label">You are going!</span>
@@ -31,7 +31,7 @@
             {{/if}}
           </div>
 
-          <div class="col-md-4 col-sm-4 col-xs-4">
+          <div class="{{creatorWidth}}">
 
               <h3>{{numberAttending}} attending
                   {{#if isAttending}}
@@ -50,7 +50,7 @@
           </div>
 
           {{#if isCreator}}
-            <div class="col-md-2 col-sm-2 col-xs-2">
+            <div class="col-md-2 col-sm-2 col-xs-6">
               <h3>{{numberUnpaid}} unpaid</h3>
               <ul class="list-unstyled">
               {{#each attending}}
