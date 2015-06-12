@@ -54,8 +54,8 @@
               <h3>{{numberUnpaid}} unpaid</h3>
               <ul class="list-unstyled">
               {{#each attending}}
-                <li>
-                <input class="clickable" type="checkbox" name="paid" id="paid" value="" checked="{{hasPaid}}"> {{name}}
+                <li id="paid" class="clickable">
+                <input type="checkbox" name="paid" value="" checked="{{hasPaid}}"> {{name}}
                 </li>
               {{/each}}
               </ul>
