@@ -36,10 +36,10 @@ Template.lunch_panel.helpers({
   },
 
   hasPaid:function(){
-    if (this._paid) {
+    if (this.paid) {
       return "checked";
     } else {
-      return "";
+      return false;
     }
   }
 
@@ -73,6 +73,7 @@ Template.lunch_panel.events({
   },
 
   'click #paid':function(event,template){
+    event.preventDefault();
 
     var value = this.paid ? false : true;
 
