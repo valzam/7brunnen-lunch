@@ -1,5 +1,7 @@
 .lunch-panel {
   margin-bottom:1vh;
+  margin-left:1px;
+  margin-right:1px;;
 }
 
 .img-circle{
@@ -8,7 +10,7 @@
 }
 
 #cancelAttending{
-  font-size:0.5em;
+  font-size:0.8em;
 }
 
 .clickable {

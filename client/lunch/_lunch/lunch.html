@@ -10,7 +10,12 @@
                 <span class="label label-success attending-label">You are going!</span>
               {{/if}}
             </h3>
-            <h5>{{time}}</h5>
+            <h5>{{time}}
+            {{#if isAttending}}
+             <span class="text-danger clickable" id='cancelAttending'>Cancel attendance</span>
+            {{/if}}
+            </h5>
+
 
             <ul class="list-unstyled">
               <li>Starter: {{starter}}</li>
@@ -34,13 +39,9 @@
           <div class="{{creatorWidth}}">
 
               <h3>{{numberAttending}} attending
-                  {{#if isAttending}}
-                  <span class="text-danger clickable" id='cancelAttending'>I can't come</span>
-                  {{/if}}
+
               </h3>
 
-
-            <br>
             {{#each attending}}
               <img src="{{picture}}" alt="{{name}}" class="img-circle" height="50" width="50"
               />
@@ -55,7 +56,7 @@
               <ul class="list-unstyled">
               {{#each attending}}
                 <li id="paid" class="clickable">
-                <input type="checkbox" name="paid" value="" checked="{{hasPaid}}"> {{name}}
+                <input type="checkbox" name="paid" value="" checked="{{hasPaid}}">  {{name}}
                 </li>
               {{/each}}
               </ul>
