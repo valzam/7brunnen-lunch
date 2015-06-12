@@ -6,15 +6,16 @@ Template.create_lunch.onRendered(function() {
       format: 'dd.mm.yyyy'
     });
 
-    $('#date').datepicker('setUTCDates', new Date());
 });
 
 Template.create_lunch.events({
   'click #create_lunch':function(event,template){
       event.preventDefault();
+      var date = $('#date').datepicker('getUTCDates')[0];
+      date.setHours(14);
 
       var lunch = {
-        date: $('#date').datepicker('getUTCDates')[0],
+        date:date,
         time: $('#time').val() || "12:30pm",
         starter: $('#starter').val() || "No starter",
         main: $('#main').val() || "No main",

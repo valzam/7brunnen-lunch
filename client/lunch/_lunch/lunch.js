@@ -21,7 +21,28 @@ Template.lunch_panel.helpers({
 
   isCreator:function(){
     return this.creator === Meteor.userId();
+  },
+
+  numberUnpaid:function(){
+    var att = this.attending;
+    var unpaid = [];
+    att.forEach(function(obj){
+      if (!obj.paid) {
+        unpaid.push(obj);
+      }
+    });
+
+    return unpaid.length;
+  },
+
+  hasPaid:function(){
+    if (this._paid) {
+      return "checked";
+    } else {
+      return "";
+    }
   }
+
 
 });
 
@@ -49,5 +70,19 @@ Template.lunch_panel.events({
   'click #updateEvent':function(event,template){
 
     Session.set("updateEvent",this._id);
+  },
+
+  'click #paid':function(event,template){
+
+    var value = this.paid ? false : true;
+
+    Meteor.call("paidForEvent", Template.instance().data._id,this._id,value, function(error, result){
+      if(error){
+        console.log("error", error);
+      }
+      if(result){
+
+      }
+    });
   }
 });
