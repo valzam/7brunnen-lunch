@@ -30,9 +30,12 @@ Template.update_lunch.events({
   'click #update_lunch':function(event,template){
       event.preventDefault();
 
+      var date = $('#date').datepicker('getUTCDates')[0];
+      date.setHours(14);
+
       var lunch = {
         _id:Session.get("updateEvent"),
-        date: $('#date_update').datepicker('getUTCDates')[0],
+        date: date,
         time: $('#time_update').val() || "12:30pm",
         starter: $('#starter_update').val() || "No starter",
         main: $('#main_update').val() || "No main",
