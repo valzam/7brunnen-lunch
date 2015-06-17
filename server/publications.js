@@ -1,4 +1,4 @@
-Meteor.publish("upcommingLunches", function(){
+Meteor.publish("upcomingLunches", function(){
     var now = new Date();
     var six_hours_ago = new Date(now.getTime() - (3600000*6));
 
