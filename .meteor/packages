@@ -13,3 +13,5 @@ ian:accounts-ui-bootstrap-3
 accounts-password
 rajit:bootstrap3-datepicker
 reactive-var
+meteorhacks:kadira
+meteorhacks:kadira-debug
