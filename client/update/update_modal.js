@@ -9,7 +9,7 @@ Template.update_lunch.onRendered(function() {
 
     this.autorun(function(){
       if (Session.get('updateEvent')) {
-        var date = Event.findOne({_id:Session.get("updateEvent")});
+        var date = Events.findOne({_id:Session.get("updateEvent")});
         if (date) {
           date = date.date;
           $('#date_update').datepicker('setUTCDates',date);
@@ -22,7 +22,7 @@ Template.update_lunch.onRendered(function() {
 
 Template.update_lunch.helpers({
   event:function(){
-    return Event.findOne({_id:Session.get("updateEvent")});
+    return Events.findOne({_id:Session.get("updateEvent")});
   }
 });
 

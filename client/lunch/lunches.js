@@ -5,10 +5,10 @@ Template.lunches.onCreated(function(){
 
 Template.lunches.helpers({
   lunch:function(){
-    return Event.find({},{sort:{date:1}});
+    return Events.find({},{sort:{date:1}});
   },
 
   hasLunches:function(){
-    return Event.find({}).count() > 0;
+    return Events.find({}).count() > 0;
   }
 });
