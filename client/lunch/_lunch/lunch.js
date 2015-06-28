@@ -12,7 +12,7 @@ Template.lunch_panel.helpers({
 
   isAttending:function(){
     var result = false;
-    this.attending.forEach(function(u){
+    this.attending.some(function(u){
       if(u._id === Meteor.userId()) result = true;
     });
 
@@ -25,14 +25,14 @@ Template.lunch_panel.helpers({
 
   numberUnpaid:function(){
     var att = this.attending;
-    var unpaid = [];
+    var unpaid = 0;
     att.forEach(function(obj){
       if (!obj.paid) {
-        unpaid.push(obj);
+        unpaid++;
       }
     });
 
-    return unpaid.length;
+    return unpaid;
   },
 
   hasPaid:function(){
