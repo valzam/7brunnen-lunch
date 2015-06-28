@@ -1,8 +1,11 @@
 Template.chat.onRendered(function(){
+  Utils.instantScroll('.chat-panel');
+
   this.autorun(function(){
-    var temp = Template.currentData().comments;
-     autoscroll('.chat-panel');
+    var temp = Template.currentData().comments.length;
+    Utils.autoScroll('.chat-panel');
   });
+
 });
 
 Template.chat.helpers({

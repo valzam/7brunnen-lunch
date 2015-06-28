@@ -48,9 +48,9 @@ body {
 }
 
 .chat li {
-    margin-bottom: 10px;
-    padding-bottom: 5px;
-    border-bottom: 1px dotted #999;
+    margin-top: 10px;
+    padding-top: 5px;
+    border-top: 1px dotted #999;
 }
 
 .chat li.left .chat-body {
@@ -71,6 +71,6 @@ body {
 }
 
 .chat-panel {
-  height:350px;
+  height:300px;
   overflow-y: scroll;
 }
