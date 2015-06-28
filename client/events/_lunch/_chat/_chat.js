@@ -23,7 +23,7 @@ Template.chat.helpers({
 
       minutes = minutes < 10 ? "0" + minutes : minutes;
 
-      return hour + ":" + minutes + ", " + day;
+      return day + ", " + hour + ":" + minutes;
     }
   }
 });
