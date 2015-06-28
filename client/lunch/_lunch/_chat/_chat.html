@@ -1,0 +1,40 @@
+<template name="chat">
+    <div class="panel-body chat-panel">
+        <ul class="chat">
+
+          {{#each comments}}
+            <li class="left clearfix">
+                <span class="chat-img pull-left">
+                    <img src="{{user.profile.picture}}" class="img-circle" height="50" width="50" />
+                </span>
+                <div class="chat-body clearfix">
+                    <div class="header">
+                        <strong class="primary-font">{{user.profile.name}}</strong>
+                        <small class="pull-right text-muted">
+                            <i class="fa fa-clock-o fa-fw"></i> {{timestamp}}
+                        </small>
+                    </div>
+                    <p>
+                      {{content}}
+                    </p>
+                </div>
+            </li>
+          {{/each}}
+        </ul>
+    </div>
+    <!-- /.panel-body -->
+    <div class="panel-footer">
+      <form id="newComment">
+        <div class="input-group">
+            <input id="btn-input" type="text" class="form-control input-sm" placeholder="How did you like the lunch?" />
+            <span class="input-group-btn">
+            <button class="btn btn-success btn-sm" type="submit" id="btn-chat">
+                Send
+            </button>
+            </span>
+        </div>
+      </form>
+    </div>
+    <!-- /.panel-footer -->
+
+</template>

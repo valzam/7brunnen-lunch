@@ -1,0 +1,68 @@
+<template name="overview">
+<div class="panel-body overview-panel">
+  <div class="col-md-6 col-sm-6 col-xs-12">
+    <h3>{{prettyDate}}
+      {{#if isAttending attending}}
+        <span class="label label-success attending-label">You are going!</span>
+      {{/if}}
+    </h3>
+    <h5>{{time}}
+    {{#if isAttending attending}}
+     <span class="text-danger clickable" id='cancelAttending'>Cancel attendance</span>
+    {{/if}}
+    </h5>
+
+    <ul class="list-unstyled">
+      <li>Starter: {{starter}}</li>
+      <li>Main: {{main}}</li>
+      <li>Dessert: {{dessert}}</li>
+    </ul>
+
+    <ul class="list-unstyled">
+      <li>Price: {{price}}</li>
+    </ul>
+
+    <ul class="list-unstyled">
+      <li>Created by: {{creatorName}}</li>
+    </ul>
+
+    {{#if isCreator}}
+    <a class="text-danger clickable" data-toggle="modal" data-target="#updateLunch" id='updateEvent'>Update event</a>
+    {{/if}}
+  </div>
+
+  <div class="col-md-6 col-sm-6 col-xs-12">
+
+  {{#if isCreator}}
+      <h3>{{numberPaid}} / {{numberAttending}} paid</h3>
+      <ul class="list-unstyled">
+      {{#each attending}}
+        <li class="paid clickable">
+        <input type="checkbox" name="paid" value="" checked="{{#if paid}}checked{{/if}}">  {{name}}
+        </li>
+      {{/each}}
+    </ul>
+
+    {{else}}
+
+    <h3>{{numberAttending}} attending</h3>
+
+    {{#each attending}}
+      <img src="{{picture}}" alt="{{name}}" class="img-circle" height="50" width="50"
+      />
+    {{/each}}
+
+  {{/if}}
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+{{#if currentUser}}
+{{#unless isAttending attending}}
+  <div class="panel-footer">
+    <button id="attend" class="btn btn-success btn-lg btn-block" type="button">I will be there!</button>
+  </div>
+{{/unless}}
+{{/if}}
+</template>

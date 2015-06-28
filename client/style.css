@@ -6,3 +6,71 @@ body {
 .navbar-brand {
   color:black!important;
 }
+
+.active-view {
+  text-decoration: underline;
+}
+
+/* LUNCH PANEL*/
+.lunch-panel {
+  margin-bottom:1vh;
+  margin-left:1px;
+  margin-right:1px;;
+}
+
+.img-circle{
+  margin-top:5px;
+  margin-right:5px;
+}
+
+#cancelAttending{
+  font-size:0.8em;
+}
+
+.clickable {
+    cursor:pointer;
+}
+.attending-label {
+  font-size:0.5em;
+}
+
+/* OVERVIEW */
+
+.paid {
+  margin-bottom:5px;
+}
+
+/* CHAT */
+.chat {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.chat li {
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px dotted #999;
+}
+
+.chat li.left .chat-body {
+    margin-left: 60px;
+}
+
+.chat li.right .chat-body {
+    margin-right: 60px;
+}
+
+.chat li .chat-body p {
+    margin: 0;
+}
+
+.panel .slidedown .glyphicon,
+.chat .glyphicon {
+    margin-right: 5px;
+}
+
+.chat-panel {
+  height:350px;
+  overflow-y: scroll;
+}
