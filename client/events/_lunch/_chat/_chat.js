@@ -37,6 +37,10 @@ Template.chat.events({
         user:Meteor.userId()
     };
 
+    if (comment.content === ""){
+      return;
+    }
+    
     Meteor.call("addComment", Template.instance().data._id,comment, function(error, result){
       if(error){
         console.log("error", error);
