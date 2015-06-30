@@ -30,7 +30,7 @@ Template.update_lunch.events({
   'click #update_lunch':function(event,template){
       event.preventDefault();
 
-      var date = $('#date').datepicker('getUTCDates')[0];
+      var date = $('#date_update').datepicker('getUTCDates')[0];
       date.setHours(14);
 
       var lunch = {
