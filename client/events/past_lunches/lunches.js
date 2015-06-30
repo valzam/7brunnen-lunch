@@ -1,5 +1,5 @@
 Template.past_lunches.onCreated(function(){
-  this.subscribe("pastLunches");
+  this.subscribe("pastLunches",20);
 });
 
 

@@ -1,15 +1,15 @@
 Meteor.publish("upcomingLunches", function(){
     var now = new Date();
-    var six_hours_ago = new Date(now.getTime() - (3600000*12));
+    var twelve_hours_ago = new Date(now.getTime() - (3600000*12));
 
-    return Events.find({type:"lunch",date:{$gte:six_hours_ago}},{sort:{date:1}});
+    return Events.find({type:"lunch",date:{$gte:twelve_hours_ago}},{sort:{date:1}});
 });
 
-Meteor.publish("pastLunches", function(){
+Meteor.publish("pastLunches", function(limit){
     var now = new Date();
-    var six_hours_ago = new Date(now.getTime() - (3600001*12));
+    var twelve_hours_ago = new Date(now.getTime() - (3600001*12));
 
-    return Events.find({type:"lunch",date:{$lte:six_hours_ago}},{sort:{date:-1}});
+    return Events.find({type:"lunch",date:{$lte:twelve_hours_ago}},{sort:{date:-1}},{limit:limit});
 });
 
 Meteor.publish("publicProfile", function(){
