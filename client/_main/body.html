@@ -15,8 +15,8 @@
 	<div class="collapse navbar-collapse">
 
     <ul class="nav navbar-nav">
-      <li class="{{active 'upcoming_lunches'}}" id="upcoming_lunches"><a href="#">Upcoming Lunches</a></li>
-      <li class="{{active 'past_lunches'}}" id="past_lunches"><a href="#">Past Lunches</a></li>
+      <li class="view {{active 'upcoming_lunches'}}" id="upcoming_lunches"><a href="#">Upcoming Lunches</a></li>
+      <li class="view {{active 'past_lunches'}}" id="past_lunches"><a href="#">Past Lunches</a></li>
 			{{#if currentUser}}
       	<li id="create" data-toggle="modal" data-target="#createLunch"><a href="#">Create Lunch Event</a></li>
 			{{/if}}

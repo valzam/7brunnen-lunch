@@ -15,7 +15,7 @@ Template.main.helpers({
 });
 
 Template.main.events({
-  "click .nav li": function(event, template){
+  "click .view": function(event, template){
     Template.instance().view.set(event.currentTarget.id);
   }
 });
