@@ -1,4 +1,4 @@
-<template name="lunches">
+<template name="past_lunches">
   {{#if Template.subscriptionsReady}}
 
   {{#if hasLunches}}
@@ -6,7 +6,7 @@
       {{> lunch_panel}}
     {{/each}}
   {{else}}
-  <h2>No upcoming lunches</h2>
+  <h2>No past lunches</h2>
   {{/if}}
 
   {{else}}

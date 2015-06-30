@@ -1,9 +1,9 @@
-Template.lunches.onCreated(function(){
-  this.subscribe("upcomingLunches");
+Template.past_lunches.onCreated(function(){
+  this.subscribe("pastLunches");
 });
 
 
-Template.lunches.helpers({
+Template.past_lunches.helpers({
   lunch:function(){
     return Events.find({});
   },
