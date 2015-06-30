@@ -5,7 +5,7 @@ Template.lunches.onCreated(function(){
 
 Template.lunches.helpers({
   lunch:function(){
-    return Events.find({},{sort:{date:1}});
+    return Events.find({});
   },
 
   hasLunches:function(){
